@@ -1,0 +1,7 @@
+# ~/.zsh_plugins.txt — Antidote plugin list
+# Install: brew install antidote
+# These replace the /usr/share/zsh-* paths from Ubuntu
+
+zsh-users/zsh-completions
+zsh-users/zsh-autosuggestions
+zsh-users/zsh-syntax-highlighting
