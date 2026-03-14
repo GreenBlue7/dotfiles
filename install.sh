@@ -24,6 +24,12 @@ for file in "${files[@]}"; do
     echo "Linked $src → $dst"
 done
 
+# SSH config
+mkdir -p "$HOME/.ssh"
+chmod 700 "$HOME/.ssh"
+ln -sf "$DOTFILES/ssh_config" "$HOME/.ssh/config"
+echo "Linked $DOTFILES/ssh_config → $HOME/.ssh/config"
+
 # zshrc.d
 mkdir -p "$HOME/.zshrc.d"
 for file in "$DOTFILES/zshrc.d/"*.zsh; do
