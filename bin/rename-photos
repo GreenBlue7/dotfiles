@@ -1,0 +1,71 @@
+#!/usr/bin/env zsh
+# rename-photos: Rename iPhone HEIC photos to ISO date format (YYYY-MM-DD_N.HEIC)
+# Usage: rename-photos [-n] <directory>
+
+set -euo pipefail
+
+# ---------- helpers ----------
+
+usage() {
+  cat <<EOF
+Usage: rename-photos [options] <directory>
+
+Options:
+  -n, --dry-run    Preview changes without renaming
+  -h, --help       Show this help message
+EOF
+  exit 0
+}
+
+die() {
+  echo "Error: $1" >&2
+  exit 1
+}
+
+# ---------- argument parsing ----------
+
+DRY_RUN=false
+TARGET_DIR=""
+
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    -n|--dry-run) DRY_RUN=true; shift ;;
+    -h|--help)    usage ;;
+    -*)           die "Unknown option: $1" ;;
+    *)            TARGET_DIR="$1"; shift ;;
+  esac
+done
+
+# ---------- validation ----------
+
+[[ -z "$TARGET_DIR" ]] && die "No directory specified. Use -h for help."
+[[ -d "$TARGET_DIR" ]] || die "'$TARGET_DIR' is not a valid directory."
+
+# ---------- main ----------
+
+typeset -A date_counter
+
+while IFS=$'\t' read -r filepath datetime; do
+  date_part="${datetime%%[[:space:]]*}"          # "2026:03:19"
+  iso_date="${date_part//:/-}"                   # "2026-03-19"
+
+  count="${date_counter[$iso_date]:-0}"
+  (( count += 1 ))                               # fix: avoid set -e false-positive
+  date_counter[$iso_date]=$count
+
+  ext="${filepath##*.}"                          # "HEIC"
+  new_name="${iso_date}_${count}.${ext}"
+  new_path="$(dirname "$filepath")/${new_name}"
+
+  if [[ "$DRY_RUN" == true ]]; then
+    echo "[dry-run] $(basename "$filepath") → ${new_name}"
+  else
+    mv "$filepath" "$new_path"
+    echo "Renamed: $(basename "$filepath") → ${new_name}"
+  fi
+
+done < <(
+  exiftool -T -FileName -DateTimeOriginal -ext HEIC "$TARGET_DIR" \
+    | awk -F'\t' '{print $1"\t"$2}' \
+    | sort -t$'\t' -k2
+)

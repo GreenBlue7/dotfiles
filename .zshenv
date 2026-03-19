@@ -3,3 +3,6 @@
 
 # uv (Python package manager)
 export PATH="$HOME/.local/bin:$PATH"
+
+# Custom scripts
+export PATH="$HOME/dotfiles/bin:$PATH"
