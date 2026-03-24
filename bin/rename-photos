@@ -55,12 +55,12 @@ while IFS=$'\t' read -r filepath datetime; do
 
   ext="${filepath##*.}"                          # "HEIC"
   new_name="${iso_date}_${count}.${ext}"
-  new_path="$(dirname "$filepath")/${new_name}"
+  new_path="${TARGET_DIR}/${new_name}"
 
   if [[ "$DRY_RUN" == true ]]; then
     echo "[dry-run] $(basename "$filepath") → ${new_name}"
   else
-    mv "$filepath" "$new_path"
+    mv "${TARGET_DIR}/${filepath}" "$new_path"
     echo "Renamed: $(basename "$filepath") → ${new_name}"
   fi
 

@@ -1,0 +1,67 @@
+#!/usr/bin/env -S uv run --script
+# /// script
+# requires-python = ">=3.11"
+# dependencies = [
+#   "pillow",
+#   "pillow-heif",
+# ]
+# ///
+# heic-to-png: Convert HEIC lecture photos to PNG
+# Usage: heic-to-png [-n] <directory>
+
+import sys
+from pathlib import Path
+from PIL import Image
+from pillow_heif import register_heif_opener
+
+register_heif_opener()
+
+# ---------- helpers ----------
+
+def usage():
+    print("""Usage: heic-to-png [options] <directory>
+
+Options:
+  -n, --dry-run    Preview changes without converting
+  -h, --help       Show this help message""")
+    sys.exit(0)
+
+def die(msg):
+    print(f"Error: {msg}", file=sys.stderr)
+    sys.exit(1)
+
+# ---------- argument parsing ----------
+
+if "-h" in sys.argv or "--help" in sys.argv:
+    usage()
+
+dry_run = "-n" in sys.argv or "--dry-run" in sys.argv
+args_clean = [a for a in sys.argv[1:] if a not in ("-n", "--dry-run")]
+
+if not args_clean:
+    die("No directory specified. Use -h for help.")
+
+target = Path(args_clean[0])
+if not target.is_dir():
+    die(f"'{target}' is not a valid directory.")
+
+# ---------- main ----------
+
+heic_files = sorted(target.glob("*.HEIC"))
+if not heic_files:
+    print("No HEIC files found.")
+    sys.exit(0)
+
+for heic_path in heic_files:
+    out_path = heic_path.with_suffix(".png")
+
+    if out_path.exists():
+        print(f"[skip] {heic_path.name} (already converted)")
+        continue
+
+    if dry_run:
+        print(f"[dry-run] {heic_path.name} → {out_path.name}")
+        continue
+
+    Image.open(heic_path).convert("RGB").save(out_path, format="PNG")
+    print(f"[converted] {heic_path.name} → {out_path.name}")

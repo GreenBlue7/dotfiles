@@ -1,0 +1,39 @@
+#!/usr/bin/env zsh
+# process-ln: Rename and convert all lecture_notes folders under ~/Documents
+# Usage: process-ln [-n]
+
+set -euo pipefail
+
+[[ "${1:-}" == "-h" || "${1:-}" == "--help" ]] && {
+  cat <<EOF
+Usage: process-ln [options]
+
+Options:
+  -n, --dry-run    Preview changes without processing
+  -h, --help       Show this help message
+EOF
+  exit 0
+}
+
+FLAG=""
+[[ "${1:-}" == "-n" || "${1:-}" == "--dry-run" ]] && FLAG="-n"
+
+lecture_dirs=("${(@f)$(find "$HOME/Documents" -type d -name "lecture_notes")}")
+[[ ${#lecture_dirs[@]} -eq 0 ]] && { echo "No lecture_notes found."; exit 0; }
+
+echo "Found:"
+for dir in "${lecture_dirs[@]}"; do echo "  - $dir"; done
+echo ""
+echo -n "Proceed? [y/N] "
+read -r answer
+[[ "$answer" == "y" || "$answer" == "Y" ]] || { echo "Aborted."; exit 0; }
+
+for dir in "${lecture_dirs[@]}"; do
+  echo "\n── $dir"
+  rename-photos $FLAG "$dir"
+  heic-to-png $FLAG "$dir"
+  # Remove HEIC files only after successful PNG conversion
+  [[ -z "$FLAG" ]] && for heic in "$dir"/*.HEIC(N); do
+    [[ -f "${heic:r}.png" ]] && rm "$heic" && echo "[removed] $(basename "$heic")"
+  done
+done
