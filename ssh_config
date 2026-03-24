@@ -10,8 +10,22 @@ Host *
     IgnoreUnknown UseKeychain
 
 Host thinkpad
-    Hostname THINKPAD_IP
-    Port 22
+    HostName THINKPAD_IP
     User youngmook-jung
+    Port 22
+    ServerAliveInterval 60
+    ServerAliveCountMax 3
+
+Host nsl5
+    HostName nsl5.cau.ac.kr
+    User s20204000
+    Port 7722
+    ServerAliveInterval 60
+    ServerAliveCountMax 3
+
+Host nsl2
+    HostName nsl2.cau.ac.kr
+    User s20204000
+    Port 7722
     ServerAliveInterval 60
     ServerAliveCountMax 3
