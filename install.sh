@@ -38,4 +38,13 @@ for file in "$DOTFILES/zshrc.d/"*.zsh; do
     echo "Linked $file → $HOME/.zshrc.d/$name"
 done
 
+# sdkman
+if [[ ! -d "$HOME/.sdkman" ]]; then
+    echo "Installing sdkman..."
+    curl -s "https://get.sdkman.io" | bash
+    echo "Installed sdkman"
+else
+    echo "sdkman already installed, skipping"
+fi
+
 echo "\nDone."
