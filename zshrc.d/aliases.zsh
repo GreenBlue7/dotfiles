@@ -7,6 +7,7 @@ alias gemini-cli='npx https://github.com/google-gemini/gemini-cli'
 alias dev='cd ~/dev'
 alias kiroku='cd ~/dev/web/kiroku'
 alias obsd='cd ~/dev/obsidian_vault'
+alias capstone='cd ~/dev/web/DreamSix'
 
 # ---------- IDE launchers ----------
 # JetBrains Toolbox installs CLI launchers to:
