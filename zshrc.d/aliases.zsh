@@ -8,19 +8,13 @@ alias dev='cd ~/dev'
 alias kiroku='cd ~/dev/web/kiroku'
 alias obsd='cd ~/dev/obsidian_vault'
 alias capstone='cd ~/dev/web/DreamSix'
+alias schl='cd ~/dev/school'
 
 # ---------- IDE launchers ----------
-# JetBrains Toolbox installs CLI launchers to:
-#   ~/.local/share/JetBrains/Toolbox/scripts/
-# Enable in Toolbox: Settings → Generate shell scripts → path above
-# Then these just work:
-alias idea='open -a "IntelliJ IDEA"'      # GUI open (always works)
-# Or if Toolbox CLI scripts are on PATH:
-# alias idea='idea'                        # CLI launcher
+# JetBrains IDE shortcuts are configured in JetBrains Toolbox
 
 # Open current dir in VS Code / Cursor
 alias c='code .'
-alias cr='cursor .'
 
 # ---------- macOS-specific shortcuts ----------
 # Quick Look from terminal (Space-bar preview without opening)
@@ -45,3 +39,9 @@ alias finder='open .'
 
 # Lock screen
 alias afk='pmset displaysleepnow'
+
+# Brew shortcuts
+alias bup='brew update && brew upgrade && brew cleanup && brew doctor && brew list'
+
+# Copy file contents to clipboard
+cc() { cat "$1" | pbcopy; echo "Copied: $1"; }
