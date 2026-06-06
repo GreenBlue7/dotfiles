@@ -38,6 +38,11 @@ for file in "$DOTFILES/zshrc.d/"*.zsh; do
     echo "Linked $file → $HOME/.zshrc.d/$name"
 done
 
+# .config (Ghostty)
+mkdir -p "$HOME/.config/ghostty"
+ln -sf "$DOTFILES/config/ghostty/config" "$HOME/.config/ghostty/config"
+echo "Linked $DOTFILES/config/ghostty/config → $HOME/.config/ghostty/config"
+
 # sdkman
 if [[ ! -d "$HOME/.sdkman" ]]; then
     echo "Installing sdkman..."
