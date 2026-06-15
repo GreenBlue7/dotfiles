@@ -5,16 +5,14 @@ alias gemini-cli='npx https://github.com/google-gemini/gemini-cli'
 
 # ---------- Directory shortcuts ----------
 alias dev='cd ~/dev'
-alias kiroku='cd ~/dev/web/kiroku'
-alias obsd='cd ~/dev/obsidian_vault'
-alias capstone='cd ~/dev/web/DreamSix'
+alias kiroku='cd ~/dev/projects/kiroku'
+alias obsd='cd ~/obsidian_vault'
+alias ocr='cd ~/dev/projects/ocr-system'
 alias schl='cd ~/dev/school'
 
 # ---------- IDE launchers ----------
 # JetBrains IDE shortcuts are configured in JetBrains Toolbox
 
-# Open current dir in VS Code / Cursor
-alias c='code .'
 
 # ---------- macOS-specific shortcuts ----------
 # Quick Look from terminal (Space-bar preview without opening)
@@ -43,5 +41,5 @@ alias afk='pmset displaysleepnow'
 # Brew shortcuts
 alias bup='brew update && brew upgrade && brew cleanup && brew doctor && brew list'
 
-# Copy file contents to clipboard
+# cat + pbcopy
 cc() { cat "$1" | pbcopy; echo "Copied: $1"; }
