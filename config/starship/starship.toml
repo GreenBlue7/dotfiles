@@ -1,0 +1,5 @@
+# Show a bold SSH warning ONLY when connected over SSH
+[hostname]
+ssh_only = true
+format = '[ ⚠ SSH:$hostname ](bold white bg:red) '
+disabled = false

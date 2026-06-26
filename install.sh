@@ -43,6 +43,11 @@ mkdir -p "$HOME/.config/ghostty"
 ln -sf "$DOTFILES/config/ghostty/config" "$HOME/.config/ghostty/config"
 echo "Linked $DOTFILES/config/ghostty/config → $HOME/.config/ghostty/config"
 
+# .config (starship)
+mkdir -p "$HOME/.config"
+ln -sf "$DOTFILES/config/starship/starship.toml" "$HOME/.config/starship.toml"
+echo "Linked $DOTFILES/config/starship/starship.toml → $HOME/.config/starship.toml"
+
 # sdkman
 if [[ ! -d "$HOME/.sdkman" ]]; then
     echo "Installing sdkman..."
