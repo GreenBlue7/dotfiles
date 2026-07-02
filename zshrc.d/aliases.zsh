@@ -41,8 +41,6 @@ alias afk='pmset displaysleepnow'
 # Brew shortcuts
 alias bup='brew update && brew upgrade && brew cleanup && brew doctor && brew list'
 
-# cat + pbcopy
-cc() { cat "$1" | pbcopy; echo "Copied: $1"; }
 
 # Alias candidates
 # Navigation
