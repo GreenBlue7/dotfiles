@@ -1,0 +1,32 @@
+[user]
+	name = youngmook-jung
+	email = ymjung1506@gmail.com
+[init]
+	defaultBranch = main
+[pull]
+	rebase = true
+[push]
+	autoSetupRemote = true
+[merge]
+	conflictstyle = zdiff3
+[diff]
+	algorithm = histogram
+[rebase]
+	autoStash = true
+[rerere]
+	enabled = true
+[branch]
+	sort = -committerdate
+[core]
+	editor = code --wait
+	excludesfile = ~/.gitignore_global
+	autocrlf = input
+	pager = delta
+
+[interactive]
+	diffFilter = delta --color-only
+
+[delta]
+	navigate = true
+	side-by-side = true
+	line-numbers = true

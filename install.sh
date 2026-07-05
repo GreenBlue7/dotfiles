@@ -9,6 +9,8 @@ files=(
     .zshrc
     .zsh_plugins.txt
     .clang-format
+    .gitconfig
+    .gitignore_global
 )
 
 for file in "${files[@]}"; do
