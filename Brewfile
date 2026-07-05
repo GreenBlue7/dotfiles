@@ -2,8 +2,10 @@
 brew "antidote"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
-# Get a file from an HTTP, HTTPS or FTP server
-brew "curl"
+# Formatting tools for C, C++, Obj-C, Java, JavaScript, TypeScript
+brew "clang-format"
+# Perl lib for reading and writing EXIF metadata
+brew "exiftool"
 # Modern, maintained replacement for ls
 brew "eza"
 # Simple, fast and user-friendly alternative to find
@@ -16,10 +18,14 @@ brew "fzf"
 brew "gh"
 # Distributed revision control system
 brew "git"
+# Syntax-highlighting pager for git and diff output
+brew "git-delta"
 # Improved top (interactive process viewer)
 brew "htop"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
+# Ambitious Vim-fork focused on extensibility and agility
+brew "neovim"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
 # Cross-shell prompt for astronauts
@@ -32,14 +38,15 @@ brew "uv"
 brew "zoxide"
 # Memory training application
 cask "anki"
-# Write, edit, and chat about your code with AI
-cask "cursor"
+# Terminal-based AI coding assistant
+cask "claude-code"
 # Voice and text chat software
 cask "discord"
 # Collaborative team software
 cask "figma"
 # Web browser
 cask "firefox"
+cask "font-d2coding"
 cask "font-jetbrains-mono-nerd-font"
 # Terminal emulator that uses platform-native UI and GPU acceleration
 cask "ghostty"
@@ -61,13 +68,22 @@ cask "postman"
 cask "raycast"
 # Open-source code editor
 cask "visual-studio-code"
+# Network protocol analyzer
+cask "wireshark-app"
+# Multiplayer code editor
+cask "zed"
+# Gecko based web browser
+cask "zen"
 vscode "bradlc.vscode-tailwindcss"
+vscode "christian-kohler.npm-intellisense"
+vscode "dbaeumer.vscode-eslint"
 vscode "dbdiagram.dbdiagram-vscode"
 vscode "docker.docker"
 vscode "eamodio.gitlens"
+vscode "editorconfig.editorconfig"
 vscode "esbenp.prettier-vscode"
+vscode "firefox-devtools.vscode-firefox-debug"
 vscode "formulahendry.code-runner"
-vscode "github.copilot-chat"
 vscode "johnpapa.vscode-peacock"
 vscode "mechatroner.rainbow-csv"
 vscode "mohd-akram.vscode-html-format"
