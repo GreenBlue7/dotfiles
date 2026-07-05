@@ -32,14 +32,6 @@ chmod 700 "$HOME/.ssh"
 ln -sf "$DOTFILES/ssh_config" "$HOME/.ssh/config"
 echo "Linked $DOTFILES/ssh_config → $HOME/.ssh/config"
 
-# zshrc.d
-mkdir -p "$HOME/.zshrc.d"
-for file in "$DOTFILES/zshrc.d/"*.zsh; do
-    name=$(basename "$file")
-    ln -sf "$file" "$HOME/.zshrc.d/$name"
-    echo "Linked $file → $HOME/.zshrc.d/$name"
-done
-
 # .config (Ghostty)
 mkdir -p "$HOME/.config/ghostty"
 ln -sf "$DOTFILES/config/ghostty/config" "$HOME/.config/ghostty/config"

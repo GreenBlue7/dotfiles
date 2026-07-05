@@ -62,11 +62,6 @@ alias grep="grep --color=auto"
 # zoxide (smart cd)
 command -v zoxide &>/dev/null && eval "$(zoxide init zsh)"
 
-# fzf (fuzzy finder)
-[[ -f "$(brew --prefix)/opt/fzf/shell/key-bindings.zsh" ]] && {
-  source "$(brew --prefix)/opt/fzf/shell/key-bindings.zsh"
-  source "$(brew --prefix)/opt/fzf/shell/completion.zsh"
-}
 
 # fnm (Node.js version manager)
 command -v fnm &>/dev/null && eval "$(fnm env --use-on-cd)"
@@ -75,16 +70,16 @@ command -v fnm &>/dev/null && eval "$(fnm env --use-on-cd)"
 # ── Plugins (Antidote) ───────────────────────────────────
 # brew install antidote
 # Plugins listed in ~/.zsh_plugins.txt
-if [[ -f "$(brew --prefix)/opt/antidote/share/antidote/antidote.zsh" ]]; then
-  source "$(brew --prefix)/opt/antidote/share/antidote/antidote.zsh"
+if [[ -f "$HOMEBREW_PREFIX/opt/antidote/share/antidote/antidote.zsh" ]]; then
+  source "$HOMEBREW_PREFIX/opt/antidote/share/antidote/antidote.zsh"
   antidote load "${HOME}/.zsh_plugins.txt"
 fi
 
 
 # ── Custom modules ───────────────────────────────────────
-# Load all scripts from ~/.zshrc.d/
-if [[ -d ~/.zshrc.d ]]; then
-  for f in ~/.zshrc.d/*.zsh(N); do
+# Load all scripts from ~/dotfiles/zshrc.d/
+if [[ -d ~/dotfiles/zshrc.d ]]; then
+  for f in ~/dotfiles/zshrc.d/*.zsh(N); do
     source "$f"
   done
 fi
