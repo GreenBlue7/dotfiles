@@ -42,6 +42,10 @@ mkdir -p "$HOME/.config"
 ln -sf "$DOTFILES/config/starship/starship.toml" "$HOME/.config/starship.toml"
 echo "Linked $DOTFILES/config/starship/starship.toml → $HOME/.config/starship.toml"
 
+# .config (Neovim)
+ln -sf "$DOTFILES/config/nvim" "$HOME/.config/nvim"
+echo "Linked $DOTFILES/config/nvim → $HOME/.config/nvim"
+
 # sdkman
 if [[ ! -d "$HOME/.sdkman" ]]; then
     echo "Installing sdkman..."
