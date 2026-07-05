@@ -18,7 +18,7 @@
 [branch]
 	sort = -committerdate
 [core]
-	editor = code --wait
+	editor = nvim 
 	excludesfile = ~/.gitignore_global
 	autocrlf = input
 	pager = delta
