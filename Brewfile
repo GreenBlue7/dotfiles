@@ -24,6 +24,8 @@ brew "git-delta"
 brew "htop"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
+# Simple terminal UI for git commands
+brew "lazygit"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
 # Search tool like grep and The Silver Searcher
@@ -107,3 +109,4 @@ vscode "vue.volar"
 vscode "xabikos.javascriptsnippets"
 vscode "yzane.markdown-pdf"
 vscode "zhuangtongfa.material-theme"
+npm "corepack"
