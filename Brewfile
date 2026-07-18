@@ -22,6 +22,8 @@ brew "git"
 brew "git-delta"
 # Improved top (interactive process viewer)
 brew "htop"
+# Tools and libraries to manipulate images in select formats
+brew "imagemagick"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
 # Simple terminal UI for git commands
