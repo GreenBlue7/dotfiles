@@ -58,8 +58,6 @@ cask "ghostty"
 cask "jetbrains-toolbox"
 # Smooths scrolling and set mouse scroll directions independently
 cask "mos"
-# VPN client for secure internet access and private browsing
-cask "nordvpn"
 # App to write, plan, collaborate, and get organised
 cask "notion"
 # Knowledge base that works on top of a local folder of plain text Markdown files
@@ -68,6 +66,8 @@ cask "obsidian"
 cask "orbstack"
 # Collaboration platform for API development
 cask "postman"
+# VPN client focusing on security
+cask "protonvpn"
 # Control your tools with a few keystrokes
 cask "raycast"
 # Open-source code editor
