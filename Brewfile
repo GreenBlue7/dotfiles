@@ -42,6 +42,8 @@ brew "uv"
 brew "zoxide"
 # Memory training application
 cask "anki"
+# Open source IDE for exploring and testing APIs
+cask "bruno"
 # Terminal-based AI coding assistant
 cask "claude-code"
 # Voice and text chat software
@@ -64,8 +66,6 @@ cask "notion"
 cask "obsidian"
 # Replacement for Docker Desktop
 cask "orbstack"
-# Collaboration platform for API development
-cask "postman"
 # VPN client focusing on security
 cask "protonvpn"
 # Control your tools with a few keystrokes
