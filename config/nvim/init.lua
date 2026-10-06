@@ -19,7 +19,7 @@ require("lazy").setup({
     "rebelot/kanagawa.nvim",
     priority = 1000,  -- load colorscheme before other plugins
     config = function()
-      vim.cmd.colorscheme("kanagawa-wave")
+      vim.cmd.colorscheme("kanagawa-dragon")
     end,
   },
   {

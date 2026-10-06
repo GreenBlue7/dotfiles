@@ -8,6 +8,7 @@ alias dev='cd ~/dev'
 alias kiroku='cd ~/dev/projects/kiroku'
 alias obsd='cd ~/obsidian_vault'
 alias ocr='cd ~/dev/projects/ocr-system'
+alias fdg='cd ~/dev/projects/foodguard' 
 alias schl='cd ~/dev/school'
 
 # ---------- IDE launchers ----------
