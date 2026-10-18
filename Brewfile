@@ -56,6 +56,8 @@ cask "font-d2coding"
 cask "font-jetbrains-mono-nerd-font"
 # Terminal emulator that uses platform-native UI and GPU acceleration
 cask "ghostty"
+# Free and open-source media player
+cask "iina"
 # JetBrains tools manager
 cask "jetbrains-toolbox"
 # Smooths scrolling and set mouse scroll directions independently
