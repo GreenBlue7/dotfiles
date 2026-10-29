@@ -16,10 +16,11 @@ vim.opt.rtp:prepend(lazypath)
 -- Plugin declarations
 require("lazy").setup({
   {
-    "rebelot/kanagawa.nvim",
-    priority = 1000,  -- load colorscheme before other plugins
+    "RRethy/base16-nvim",
+    lazy = false,     -- colorschemes must load at startup
+    priority = 1000,  -- load before other plugins
     config = function()
-      vim.cmd.colorscheme("kanagawa-wave")
+      vim.cmd.colorscheme("base16-tomorrow-night-eighties")
     end,
   },
   {
