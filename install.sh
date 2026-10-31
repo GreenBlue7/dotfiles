@@ -36,6 +36,8 @@ echo "Linked $DOTFILES/ssh_config → $HOME/.ssh/config"
 mkdir -p "$HOME/.config/ghostty"
 ln -sf "$DOTFILES/config/ghostty/config" "$HOME/.config/ghostty/config"
 echo "Linked $DOTFILES/config/ghostty/config → $HOME/.config/ghostty/config"
+ln -sfn "$DOTFILES/config/ghostty/shaders" "$HOME/.config/ghostty/shaders"
+echo "Linked $DOTFILES/config/ghostty/shaders → $HOME/.config/ghostty/shaders"
 
 # .config (starship)
 mkdir -p "$HOME/.config"
@@ -43,7 +45,7 @@ ln -sf "$DOTFILES/config/starship/starship.toml" "$HOME/.config/starship.toml"
 echo "Linked $DOTFILES/config/starship/starship.toml → $HOME/.config/starship.toml"
 
 # .config (Neovim)
-ln -sf "$DOTFILES/config/nvim" "$HOME/.config/nvim"
+ln -sfn "$DOTFILES/config/nvim" "$HOME/.config/nvim"
 echo "Linked $DOTFILES/config/nvim → $HOME/.config/nvim"
 
 # sdkman

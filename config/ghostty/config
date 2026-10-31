@@ -16,3 +16,7 @@ keybind = opt+h=goto_split:left
 keybind = opt+j=goto_split:bottom
 keybind = opt+k=goto_split:top
 keybind = opt+l=goto_split:right
+
+# CRT style shader
+custom-shader = shaders/bettercrt.glsl
+custom-shader-animation = false
