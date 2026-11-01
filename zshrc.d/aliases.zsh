@@ -10,6 +10,7 @@ alias obsd='cd ~/obsidian_vault'
 alias ocr='cd ~/dev/projects/ocr-system'
 alias fdg='cd ~/dev/projects/foodguard' 
 alias schl='cd ~/dev/school'
+alias df='cd ~/dotfiles'
 
 # ---------- IDE launchers ----------
 # JetBrains IDE shortcuts are configured in JetBrains Toolbox

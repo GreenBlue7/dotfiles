@@ -9,3 +9,4 @@ vim.opt.tabstop = 2        -- width of an existing tab character
 vim.opt.shiftwidth = 2     -- width used by >>, <<, and auto-indent
 
 vim.opt.termguicolors = true
+vim.opt.showmode = false  -- lualine already shows the current mode
