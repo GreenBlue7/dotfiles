@@ -36,6 +36,8 @@ brew "ripgrep"
 brew "starship"
 # Display directories as trees (with optional color/HTML output)
 brew "tree"
+# Parser generator tool
+brew "tree-sitter-cli"
 # Extremely fast Python package installer and resolver, written in Rust
 brew "uv"
 # Shell extension to navigate your filesystem faster
