@@ -18,3 +18,23 @@ vim.opt.shiftwidth = 2     -- width used by >>, <<, and auto-indent
 
 vim.opt.termguicolors = true
 vim.opt.showmode = false  -- lualine already shows the current mode
+
+-- Sync yank/paste with the macOS clipboard
+-- Scheduled after startup so clipboard provider detection doesn't slow launch
+vim.schedule(function()
+  vim.opt.clipboard = "unnamedplus"
+end)
+
+-- Search: case-insensitive unless the pattern has an uppercase letter
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+
+-- Keep context lines visible above/below the cursor
+vim.opt.scrolloff = 8
+
+-- Always show the sign column so text doesn't shift when git signs appear
+vim.opt.signcolumn = "yes"
+
+-- Open new splits to the right and below
+vim.opt.splitright = true
+vim.opt.splitbelow = true
