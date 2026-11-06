@@ -6,7 +6,7 @@ return {
     -- Parser names happen to match filetype names for all of these
     local languages = {
       "lua", "javascript", "typescript", "vue",
-      "html", "css", "json", "java",
+      "html", "css", "json", "yaml",
     }
 
     -- Already-installed parsers are skipped

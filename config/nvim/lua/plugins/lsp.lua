@@ -3,6 +3,7 @@ return {
   dependencies = {
     { "mason-org/mason.nvim", opts = {} },
     "neovim/nvim-lspconfig",
+    "b0o/SchemaStore.nvim",  -- JSON schema catalog for jsonls
   },
   config = function()
     -- Vue SFC support: vtsls loads Vue's TypeScript plugin from the mason install
@@ -28,8 +29,18 @@ return {
       filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
     })
 
+    -- package.json, tsconfig.json, etc. validated against their published schemas
+    vim.lsp.config("jsonls", {
+      settings = {
+        json = {
+          schemas = require("schemastore").json.schemas(),
+          validate = { enable = true },
+        },
+      },
+    })
+
     require("mason-lspconfig").setup({
-      ensure_installed = { "lua_ls", "vtsls", "vue_ls" },
+      ensure_installed = { "lua_ls", "vtsls", "vue_ls", "tailwindcss", "jsonls", "yamlls" },
     })
   end,
 }
