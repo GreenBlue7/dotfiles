@@ -38,3 +38,9 @@ vim.opt.signcolumn = "yes"
 -- Open new splits to the right and below
 vim.opt.splitright = true
 vim.opt.splitbelow = true
+
+-- Show diagnostic messages inline at the end of the line
+vim.diagnostic.config({ virtual_text = true })
+
+-- Border for all floating windows (LSP hover, diagnostics, etc.)
+vim.o.winborder = "rounded"
