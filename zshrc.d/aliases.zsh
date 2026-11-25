@@ -11,7 +11,7 @@ alias ocr='cd ~/dev/projects/ocr-system'
 alias fdg='cd ~/dev/projects/foodguard' 
 alias schl='cd ~/dev/school'
 alias df='cd ~/dotfiles'
-alias hl='cd ~/dev/school/design-patterns/Design_Pattern_Team6/'
+alias dp='cd ~/dev/school/design-patterns/dp-term-project-life'
 
 # ---------- IDE launchers ----------
 # JetBrains IDE shortcuts are configured in JetBrains Toolbox
