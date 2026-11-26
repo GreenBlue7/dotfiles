@@ -7,6 +7,10 @@
 HISTSIZE=50000
 SAVEHIST=50000
 HISTFILE=~/.zsh_history
+zshaddhistory() {
+  [[ $1 != [ㄱ-ㅣ가-힣]* ]]
+}
+ZSH_AUTOSUGGEST_HISTORY_IGNORE='[ㄱ-ㅣ가-힣]*'
 setopt append_history
 setopt hist_ignore_dups
 setopt hist_ignore_space
